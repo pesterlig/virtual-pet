@@ -7,17 +7,17 @@ public class VirtualPet {
 
 	// instance data for creating instance variable
 	private String name;
-	private double fullOFood;
-	private double fit;
-	private double beloved;
+	private int hunger;
+	private int health;
+	private int happiness;
 	private double contentment;
 
 	// Constructor
-	public VirtualPet(String name, double fullOFood, double fit, double beloved, double contentment) {
+	public VirtualPet(String name, int hunger, int health, int happiness, double contentment) {
 		this.name = name;
-		this.fullOFood = fullOFood;
-		this.fit = fit;
-		this.beloved = beloved;
+		this.hunger = hunger;
+		this.health = health;
+		this.happiness = happiness;
 		this.contentment = contentment;
 	}
 
@@ -29,28 +29,28 @@ public class VirtualPet {
 		this.name = name;
 	}
 
-	public double getFullOFood() {
-		return fullOFood;
+	public int getHunger() {
+		return hunger;
 	}
 
-	public void setFullOFood(double fullOFood) {
-		this.fullOFood = fullOFood;
+	public void setHunger(int hunger) {
+		this.hunger = hunger;
 	}
 
-	public double getFit() {
-		return fit;
+	public int getHealth() {
+		return health;
 	}
 
-	public void setFit(double fit) {
-		this.fit = fit;
+	public void setHealth(int health) {
+		this.health = health;
 	}
 
-	public double getBeloved() {
-		return beloved;
+	public int getHappiness() {
+		return happiness;
 	}
 
-	public void setBeloved(double beloved) {
-		this.beloved = beloved;
+	public void setHappiness(int happiness) {
+		this.happiness = happiness;
 	}
 
 	public double getContentment() {
@@ -61,47 +61,49 @@ public class VirtualPet {
 		this.contentment = contentment;
 	}
 
-	public void ShowPetStatus(String name) {
-		contentment = (fullOFood * fit * beloved) / 3;
-		System.out.println("Miaow!");
-		System.out.println(name + " is\n" + fullOFood + "% full of food\n" + fit + "% fit\n" + beloved + "% beloved\n");
-		if (contentment >= 75) {
-			System.out.println(name + " is content now ");
-		} else if (contentment >= 50 && contentment < 75) {
-			System.out.println(name + " could be happier...");
-		} else if (contentment < 50 && contentment > 0) {
-			System.out.println(name + "is discontent!");
-		} else {
-			System.out.println(name + " has run away!");
-
-		}
+	public void tick() {
+		contentment = ((100 - hunger) * health * happiness) / 3;
+		hunger += 10;
+		health -= 10;
+		happiness -= 10;
 	}
 
 	public void displayMenu(String name) {
 		System.out.println("What would you like to do? (Input number of choice)");
 		System.out.println(" 1 = Feed " + name + " expensive canned salmon");
 		System.out.println(" 2 = Feed " + name + " dry food");
-		System.out.println(" 3 = Cathug* " + name);
-		System.out.println(" 4 =  Drag a string around the floor for " + name + " to play with");
+		System.out.println(" 3 = Hug " + name);
+		System.out.println(" 4 = Drag a string around for " + name + " to play with");
 		System.out.println(" 5 = Ignore " + name);
 	}
 
-	public void makeChoice(int choice, String name) {
-		if (choice == 1) {
-			System.out.println("Miaow! Miaow! " + name + " loves salmon!");
-			fullOFood += (20 * (randNum));
-		} else if (choice == 2) {
-			System.out.println("Miaow! " + name + " munches the dry food.");
-			fullOFood += (10 * (randNum));
-		} else if (choice == 3) {
-			System.out.println("Purr... " + name + " enjoys* the cathug!");
-			beloved += (20 * (randNum));
-		} else if (choice == 4) {
-			System.out.println(name + " chases the string around the catio - life is good!");
-			fit += (10 * (randNum));
-		} else if (choice == 5) {
-			System.out.println("How can you ignore a kitten???");
-			// (call tick?)
+	// public void makeChoice(int choice, String name) {
+	// if (choice == 1) {
+	// System.out.println("Miaow! Miaow! " + name + " loves salmon!");
+	// hunger += (20 * (randNum));
+	// } else if (choice == 2) {
+	// System.out.println("Miaow! " + name + " munches the dry food.");
+	// hunger += (10 * (randNum));
+	// } else if (choice == 3) {
+	// System.out.println("Purr... " + name + " enjoys* the cat-hug!");
+	// happiness -= (10 * (randNum));
+	// } else if (choice == 4) {
+	// System.out.println(name + " chases the string around the catio - life is
+	// good!");
+	// health += (20 * (randNum));
+	// } else if (choice == 5) {
+	// System.out.println("How can you ignore a kitten???");
+	// // (call tick?)
+	// }
+	// }
+
+	public int feedSalmon() {
+		hunger -= (20 * (randNum));
+		if (hunger > 100) {
+			hunger = 100;
+		} else if (hunger < 0) {
+			hunger = 0;
 		}
+		return hunger;
 	}
 }

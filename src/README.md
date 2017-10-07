@@ -39,3 +39,8 @@ need to build methods for each choice - feed, hug, play
 need to build tick method
 want to build some random descriptions for cat 1=tabby, 2=calico 3=tuxedo etc.
 
+*****
+gave up on the negative thing - I am really hung up on the language of this one
+hunger, health, happiness - simple & alliterative
+made a feedSalmon method, made limit on 100% full, got rid of doubles for everything but contentment
+
