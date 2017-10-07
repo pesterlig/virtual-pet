@@ -63,9 +63,24 @@ public class VirtualPet {
 
 	public void tick() {
 		contentment = ((100 - hunger) * health * happiness) / 3;
-		hunger += 10;
-		health -= 10;
-		happiness -= 10;
+		hunger += 5;
+		if (hunger > 100) {
+			hunger = 100;
+		} else if (hunger < 0) {
+			hunger = 0;
+		}
+		health -= 5;
+		if (health > 100) {
+			health = 100;
+		} else if (health < 0) {
+			health = 0;
+		}
+		happiness -= 5;
+		if (happiness > 100) {
+			happiness = 100;
+		} else if (happiness < 0) {
+			happiness = 0;
+		}
 	}
 
 	public void displayMenu(String name) {
@@ -73,7 +88,7 @@ public class VirtualPet {
 		System.out.println(" 1 = Feed " + name + " expensive canned salmon");
 		System.out.println(" 2 = Feed " + name + " dry food");
 		System.out.println(" 3 = Hug " + name);
-		System.out.println(" 4 = Drag a string around for " + name + " to play with");
+		System.out.println(" 4 = Drag a ribbon around for " + name + " to play with");
 		System.out.println(" 5 = Ignore " + name);
 	}
 
@@ -99,11 +114,52 @@ public class VirtualPet {
 
 	public int feedSalmon() {
 		hunger -= (20 * (randNum));
-		if (hunger > 100) {
-			hunger = 100;
-		} else if (hunger < 0) {
-			hunger = 0;
-		}
+		// if (hunger > 100) {
+		// hunger = 100;
+		// } else if (hunger < 0) {
+		// hunger = 0;
+		// }
 		return hunger;
 	}
+
+	public int feedDryFood() {
+		hunger -= (10 * (randNum));
+		// if (hunger > 100) {
+		// hunger = 100;
+		// } else if (hunger < 0) {
+		// hunger = 0;
+		// }
+		return hunger;
+	}
+
+	public int hugCat() {
+		happiness -= (5 * randNum);
+		// if (happiness > 100) {
+		// happiness = 100;
+		// } else if (happiness < 0) {
+		// happiness = 0;
+		// }
+		return happiness;
+	}
+
+	public int dragRibbon() {
+		health += (20 * (randNum));
+		// if (health > 100) {
+		// health = 100;
+		// } else if (health < 0) {
+		// health = 0;
+		// }
+		return health;
+	}
+
+	public int ignoreCat() {
+		happiness += (3 * (randNum));
+		// if (happiness > 100) {
+		// happiness = 100;
+		// } else if (happiness < 0) {
+		// happiness = 0;
+		// }
+		return happiness;
+	}
+
 }

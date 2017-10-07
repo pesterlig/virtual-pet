@@ -44,3 +44,6 @@ gave up on the negative thing - I am really hung up on the language of this one
 hunger, health, happiness - simple & alliterative
 made a feedSalmon method, made limit on 100% full, got rid of doubles for everything but contentment
 
+*****
+made more methods - still a little buggy, but must take break
+

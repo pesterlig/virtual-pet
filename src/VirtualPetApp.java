@@ -38,9 +38,23 @@ public class VirtualPetApp {
 			if (choice == 1) {
 				cat1.feedSalmon();
 				System.out.println("Miaow! Miaow! " + name + " loves salmon!");
-				cat1.tick();
+			} else if (choice == 2) {
+				cat1.feedDryFood();
+				System.out.println("Miaow! " + name + " munches the dry food.");
+			} else if (choice == 3) {
+				cat1.hugCat();
+				System.out.println("Purr... " + name + " endures the cat-hug.");
+			} else if (choice == 4) {
+				cat1.dragRibbon();
+				System.out.println(name + " chases the ribbon around the catio - life is good!");
+			} else if (choice == 5) {
+				cat1.ignoreCat();
+				System.out.println(name + "has been properly ignored.  He snubs you back by \n"
+						+ "walking across your keyboard and waving his tail under your nose.");
 			}
+			cat1.tick();
 		}
+
 		System.out.println(name + " has run away!");
 		System.out.println("Game Over");
 		System.exit(0);
