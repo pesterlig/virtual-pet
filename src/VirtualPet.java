@@ -83,6 +83,16 @@ public class VirtualPet {
 		}
 	}
 
+	public void displayAsciiKitten() {
+		char backSlash = '\\';
+		System.out.println("	    /|");
+		System.out.println("	  =(o  ` 7");
+		System.out.println("	     ` o =");
+		System.out.println("	   /   `" + backSlash);
+		System.out.println("	   U U\n");
+
+	}
+
 	public void displayMenu(String name) {
 		System.out.println("What would you like to do? (Input number of choice)");
 		System.out.println(" 1 = Feed " + name + " expensive canned salmon");
@@ -162,8 +172,5 @@ public class VirtualPet {
 		// }
 		return happiness;
 	}
-	
-	
-	
 
 }

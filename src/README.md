@@ -52,5 +52,38 @@ methods working a little better, but game loop is not working....  grrrr
 going to comment out all the methods but one and see if I can get the game to end
 *****
 tweaked some things and the game works now - time for refactoring and stretch goals
+things I want to do
+get the range for hunger, happiness, etc out of the tick method and into its own method?
+make a loop that makes sure you enter a value and will not proceed until you do
+put the cursor where you would enter the new value
+make a quit method
+have pet do things on its own  (I need to call methods from the methods - is this ok?)
+ascii cats
 
+   /\___/\      
+  ( o   O )  
+   =  Y  = 
+
+   /\___/\      
+  ( a   a )  
+   =  Y  = 
+
+   /\___/\      
+  ( @   @ )  
+   =  O  = 
+ 
+   
+     /|
+  =(o  ` 7
+     ` o =
+   /   `\  
+   U U 
+   
+   *****
+   added an ascii cat to the game
+   
+   
+   
+   
+   
 
