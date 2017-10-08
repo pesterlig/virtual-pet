@@ -62,20 +62,20 @@ public class VirtualPet {
 	}
 
 	public void tick() {
-		contentment = ((100 - hunger) * health * happiness) / 3;
-		hunger += 5;
+		contentment = ((100 - hunger) + health + happiness) / 3;
+		hunger += 7;
 		if (hunger > 100) {
 			hunger = 100;
 		} else if (hunger < 0) {
 			hunger = 0;
 		}
-		health -= 5;
+		health -= 3;
 		if (health > 100) {
 			health = 100;
 		} else if (health < 0) {
 			health = 0;
 		}
-		happiness -= 5;
+		happiness -= 3;
 		if (happiness > 100) {
 			happiness = 100;
 		} else if (happiness < 0) {
@@ -90,6 +90,7 @@ public class VirtualPet {
 		System.out.println(" 3 = Hug " + name);
 		System.out.println(" 4 = Drag a ribbon around for " + name + " to play with");
 		System.out.println(" 5 = Ignore " + name);
+		System.out.println(" 6 = Talk to  " + name);
 	}
 
 	// public void makeChoice(int choice, String name) {
@@ -153,7 +154,7 @@ public class VirtualPet {
 	}
 
 	public int ignoreCat() {
-		happiness += (3 * (randNum));
+		happiness += (10 * (randNum));
 		// if (happiness > 100) {
 		// happiness = 100;
 		// } else if (happiness < 0) {
@@ -161,5 +162,8 @@ public class VirtualPet {
 		// }
 		return happiness;
 	}
+	
+	
+	
 
 }

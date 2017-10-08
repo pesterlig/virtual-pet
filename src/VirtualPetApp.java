@@ -16,15 +16,15 @@ public class VirtualPetApp {
 		double contentment = cat1.getContentment();
 
 		// Game Loop:
-		while (contentment > 0) {
+		while (cat1.getContentment() > 0) {
 			cat1.tick();
 			// System.out.println("Miaow!");
 
-			if (contentment >= 75) {
+			if (cat1.getContentment() >= 75) {
 				System.out.println(name + " is mostly content now ");
-			} else if (contentment >= 50 && contentment < 75) {
+			} else if (cat1.getContentment() >= 50 && cat1.getContentment() < 75) {
 				System.out.println(name + " could be happier...");
-			} else if (contentment < 50 && contentment > 0) {
+			} else if (cat1.getContentment() < 50 && cat1.getContentment() > 0) {
 				System.out.println(name + "is discontent!");
 			}
 
@@ -49,8 +49,11 @@ public class VirtualPetApp {
 				System.out.println(name + " chases the ribbon around the catio - life is good!");
 			} else if (choice == 5) {
 				cat1.ignoreCat();
-				System.out.println(name + "has been properly ignored.  He snubs you back by \n"
+				System.out.println(name + " has been properly ignored.  He snubs you back by \n"
 						+ "walking across your keyboard and waving his tail under your nose.");
+			} else if (choice == 6) {
+				System.out.println("You: Aaaaw!  Miaow, Miaow!  Who is a pwetty kitty? \n " + name
+						+ " is a pwetty kitty! \n" + name + " is bemused, but this does nothing for him...");
 			}
 			cat1.tick();
 		}

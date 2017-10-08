@@ -47,3 +47,10 @@ made a feedSalmon method, made limit on 100% full, got rid of doubles for everyt
 *****
 made more methods - still a little buggy, but must take break
 
+****
+methods working a little better, but game loop is not working....  grrrr
+going to comment out all the methods but one and see if I can get the game to end
+*****
+tweaked some things and the game works now - time for refactoring and stretch goals
+
+
