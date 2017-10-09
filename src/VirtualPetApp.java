@@ -15,12 +15,10 @@ public class VirtualPetApp {
 		cat1.setName(input.nextLine());
 		String name = cat1.getName();
 		System.out.println(name + " is the perfect name for this cat!\n");
-		double contentment = cat1.getContentment();
 
 		// Game Loop:
 		while (cat1.getContentment() > 0) {
 			cat1.tick();
-			// System.out.println("Miaow!");
 
 			if (cat1.getContentment() >= 75) {
 				System.out.println(name + " is mostly content now ");
@@ -45,7 +43,7 @@ public class VirtualPetApp {
 				System.out.println("Miaow! " + name + " munches the dry food.\n");
 			} else if (choice == 3) {
 				cat1.hugCat();
-				System.out.println("Purr... " + name + " endures the cat-hug\n.");
+				System.out.println("Purr... " + name + " endures the cat-hug.\n");
 			} else if (choice == 4) {
 				cat1.dragRibbon();
 				System.out.println(name + " chases the ribbon around the catio - life is good!\n");
@@ -57,6 +55,8 @@ public class VirtualPetApp {
 				System.out.println("You: Aaaaw!  Miaow, Miaow!  Who is a pwetty kitty? \n " + name
 						+ " is a pwetty kitty! \n" + name + " is bemused, but this does nothing for him...\n");
 			}
+			System.out.println(cat1.hunt(cat1.getHunger(), choice));
+
 			cat1.tick();
 		}
 

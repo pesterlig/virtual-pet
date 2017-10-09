@@ -4,6 +4,8 @@ public class VirtualPet {
 
 	Random generator = new Random();
 	int randNum = generator.nextInt(4) + 1;
+	int randNum2 = generator.nextInt(2) + 1;
+	String catDragsIn;
 
 	// instance data for creating instance variable
 	private String name;
@@ -103,73 +105,46 @@ public class VirtualPet {
 		System.out.println(" 6 = Talk to  " + name);
 	}
 
-	// public void makeChoice(int choice, String name) {
-	// if (choice == 1) {
-	// System.out.println("Miaow! Miaow! " + name + " loves salmon!");
-	// hunger += (20 * (randNum));
-	// } else if (choice == 2) {
-	// System.out.println("Miaow! " + name + " munches the dry food.");
-	// hunger += (10 * (randNum));
-	// } else if (choice == 3) {
-	// System.out.println("Purr... " + name + " enjoys* the cat-hug!");
-	// happiness -= (10 * (randNum));
-	// } else if (choice == 4) {
-	// System.out.println(name + " chases the string around the catio - life is
-	// good!");
-	// health += (20 * (randNum));
-	// } else if (choice == 5) {
-	// System.out.println("How can you ignore a kitten???");
-	// // (call tick?)
-	// }
-	// }
-
 	public int feedSalmon() {
 		hunger -= (20 * (randNum));
-		// if (hunger > 100) {
-		// hunger = 100;
-		// } else if (hunger < 0) {
-		// hunger = 0;
-		// }
 		return hunger;
+	}
+
+	public String hunt(int hungry, int choice) {
+		int deadAnimal = randNum2;
+		if (hungry > 60 && (choice != 1 || choice != 2)) {
+			if (deadAnimal == 1) {
+				catDragsIn = "a half-eaten squabbit";
+			} else if (deadAnimal == 2) {
+				catDragsIn = "a dead mouse head";
+			} else if (deadAnimal == 3) {
+				catDragsIn = "an angry injured bat";
+			} else {
+				catDragsIn = "";
+			}
+			hunger -= 20;
+			return this.name + " went hunting and left " + catDragsIn + " on the doorstep.\n";
+		}
+		return "Miaow!";
 	}
 
 	public int feedDryFood() {
 		hunger -= (10 * (randNum));
-		// if (hunger > 100) {
-		// hunger = 100;
-		// } else if (hunger < 0) {
-		// hunger = 0;
-		// }
 		return hunger;
 	}
 
 	public int hugCat() {
 		happiness -= (5 * randNum);
-		// if (happiness > 100) {
-		// happiness = 100;
-		// } else if (happiness < 0) {
-		// happiness = 0;
-		// }
 		return happiness;
 	}
 
 	public int dragRibbon() {
 		health += (20 * (randNum));
-		// if (health > 100) {
-		// health = 100;
-		// } else if (health < 0) {
-		// health = 0;
-		// }
 		return health;
 	}
 
 	public int ignoreCat() {
 		happiness += (10 * (randNum));
-		// if (happiness > 100) {
-		// happiness = 100;
-		// } else if (happiness < 0) {
-		// happiness = 0;
-		// }
 		return happiness;
 	}
 

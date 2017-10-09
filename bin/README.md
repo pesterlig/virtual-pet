@@ -2,6 +2,11 @@ This is the README for virtual-pet
 
 Pet will be a cat
 
+Below are notes from the creation of the game.
+Please note that if you don't feed the cat, it will hunt for itself 
+and leave something disgusting on your doorstep.
+
+Game Creation Notes:
 Pet will have a game loop, a clock, 
 and methods for eating, pooping, etc.
 
@@ -80,7 +85,11 @@ ascii cats
    U U 
    
    *****
-   added an ascii cat to the game
+   added an ascii kitten to the game
+   
+   *****
+   added a method for the cat to hunt if it gets hungry
+   and you don't feed it
    
    
    
